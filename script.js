@@ -19,8 +19,16 @@ fetch('projects.json')
 
 
 
-function toggleContactOptions() {
+function toggleContactOptions(button) {
   const options = document.querySelector('.contact-options');
   options.style.display = options.style.display === 'flex' ? 'none' : 'flex';
+
+  // Stop animation when expanded
+  if (options.style.display === 'flex') {
+    button.style.animation = 'none';
+  } else {
+    button.style.animation = 'pulse-vibrate 3s infinite';
+  }
 }
+
 
