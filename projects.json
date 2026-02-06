@@ -2,16 +2,37 @@
   {
     "title": "Smart Energy Meter",
     "description": "IoT-based energy monitoring system.",
-    "image": "meter.jpg"
+    "image": "meter.jpg",
+    "link": "projects/meter.html"
   },
   {
     "title": "Solar Inverter Design",
     "description": "Designed a low-cost solar inverter for rural electrification.",
-    "image": "inverter.jpg"
+    "image": "inverter.jpg",
+    "link": "projects/inverter.html"
   },
   {
     "title": "Analog Filter Design",
     "description": "Implemented and tested analog filters for signal processing.",
-    "image": "filter.jpg"
+    "image": "filter.jpg",
+    "link": "projects/filter.html"
+  },
+  {
+    "title": "Smart Lighting System",
+    "description": "Energy-efficient lighting with IoT control.",
+    "image": "lighting.jpg",
+    "link": "projects/lighting.html"
+  },
+  {
+    "title": "Industrial Motor Controller",
+    "description": "Robust motor controller for industrial automation.",
+    "image": "motor.jpg",
+    "link": "projects/motor.html"
+  },
+  {
+    "title": "Extra Project Example",
+    "description": "This one won’t show in featured, but is in JSON.",
+    "image": "extra.jpg",
+    "link": "projects/extra.html"
   }
 ]

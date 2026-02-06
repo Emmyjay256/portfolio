@@ -1,19 +1,19 @@
 fetch('projects.json')
   .then(response => response.json())
   .then(data => {
-    const projectList = document.getElementById('project-list');
-    data.slice(0, 3).forEach(project => {
-      const div = document.createElement('div');
-      div.className = 'project';
-      div.innerHTML = `
-        <img src="${project.image}" alt="${project.title}">
-        <h3>${project.title}</h3>
-        <p>${project.description}</p>
-      `;
-      projectList.appendChild(div);
+    // take first 5 projects
+    data.slice(0, 5).forEach((project, i) => {
+      const index = i + 1; // project1, project2, etc.
+
+      document.getElementById(`project${index}-title`).textContent = project.title;
+      document.getElementById(`project${index}-desc`).textContent = project.description;
+      document.getElementById(`project${index}-img`).src = `assets/homepage/projects/${project.image}`;
+      document.getElementById(`project${index}-img`).alt = project.title;
+      document.getElementById(`project${index}-link`).href = project.link;
     });
   })
   .catch(error => console.error('Error loading projects:', error));
+
 
 
 
@@ -46,7 +46,7 @@ function animateButton() {
   // vibration effect at peak
   let vibration = "";
   if (scale >= 1.2) {
-    vibration = ` translateX(${Math.sin(Date.now()/50)*3}px)`;
+    vibration = ` translateX(${Math.sin(Date.now() / 50) * 3}px)`;
   }
 
   // apply transform (overwrite, don’t append)
@@ -102,6 +102,26 @@ function copyText(text) {
     alert("Copied: " + text);
   });
 }
+
+
+
+
+
+
+
+
+/*awards images automatic shifter*/
+document.querySelectorAll('.image-slider').forEach(slider => {
+  const images = slider.querySelectorAll('img');
+  let index = 0;
+
+  setInterval(() => {
+    images[index].classList.remove('active');
+    index = (index + 1) % images.length;
+    images[index].classList.add('active');
+  }, 4000); // change every 4 seconds
+});
+
 
 
 

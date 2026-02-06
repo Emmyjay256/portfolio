@@ -5,21 +5,41 @@ body {
   line-height: 1.6;
 }
 
-/* Hero Section */
+
+
+
+
+
+
+
+/* Hero Section (default: laptops & tablets) */
+/* Hero Section (desktop & tablets) */
 .hero {
   display: flex;
-  height: 100vh;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 70px 20px;
+  /* top & bottom padding */
+  height: calc(100vw * 7 / 16);
+  /* 16:7 ratio */
+  max-height: 100vh;
+  box-sizing: border-box;
 }
 
 .hero-image img {
-  width: 600px;
-  height: 600px;
+  /* Image height matches hero height minus padding */
+  height: calc((100vw * 7 / 16) - 140px);
+  /* subtract 70px top + 70px bottom */
+  width: calc((100vw * 7 / 16) - 140px);
+  /* keep square */
+  max-width: 600px;
+  /* optional cap */
+  max-height: 600px;
+  /* optional cap */
   border-radius: 50%;
   object-fit: cover;
-  padding-right:20px;
+  margin-right: 20px;
 }
 
 .hero-text {
@@ -27,55 +47,347 @@ body {
   max-width: 500px;
 }
 
-/* Projects Section */
+
+/* Tablets can share laptop layout */
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+  }
+}
+
+/* Small phones (≈ Galaxy S24 and smaller) */
+@media (max-width: 480px) {
+  .hero {
+    flex-direction: column;
+    height: auto;
+    /* let content define height */
+    padding: 20px;
+  }
+
+  .hero-image img {
+    width: 90vw;
+    /* nearly full width */
+    height: 90vw;
+    /* square: height = width */
+    max-width: none;
+    max-height: none;
+    margin-bottom: 20px;
+  }
+
+  .hero-text {
+    margin-left: 0;
+    text-align: center;
+    max-width: 90vw;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* ====== FEATURED PROJECTS ====== */
 .projects {
-  padding: 40px;
-  background: #f4f4f4;
+  background: var(--surface, #f9f9f9);
+  border-top: 1px solid var(--border, #ddd);
+  padding: 76px 0 86px;
+  margin-left: -16px;
+  margin-right: -16px;
+}
+
+.projects-inner {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.projects-title {
+  margin: 0 0 10px;
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-weight: 900;
+  padding-left: 16px;
+  /* ✅ left padding */
+}
+
+.projects-sub {
+  margin: 0 0 26px;
+  color: var(--muted, #666);
+  font-weight: 650;
+  max-width: 70ch;
+  padding-left: 16px;
+  /* ✅ left padding */
 }
 
 .project-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  display: grid;
+  gap: 0;
 }
 
-.project {
-  background: white;
-  border: 1px solid #ddd;
-  padding: 15px;
-  width: 250px;
+.project-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 26px;
+  padding: 34px 0;
+  cursor: pointer;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  /* center anchor */
+  transform: translateX(-50%);
+  /* shift back half */
+  width: 100vw;
+  /* ✅ full viewport width */
+  top: 0;
+  bottom: 0;
+  background: transparent;
+  transition: background-color 160ms ease;
+  z-index: 0;
+}
+
+
+.project-card:hover::before {
+  background: color-mix(in srgb, var(--accent-soft, rgba(0, 123, 255, 0.15)) 55%, transparent);
+}
+
+.project-card+.project-card::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  top: 0;
+  height: 1px;
+  background: color-mix(in srgb, var(--text, #000) 16%, transparent);
+  z-index: 1;
+}
+
+.project-card>* {
+  position: relative;
+  z-index: 2;
+}
+
+/* Alternate layouts */
+.project-card--left {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.project-card--left .project-media {
+  order: 1;
+}
+
+.project-card--left .project-content {
+  order: 2;
+}
+
+.project-card--right .project-content {
+  order: 1;
+}
+
+.project-card--right .project-media {
+  order: 2;
+}
+
+/* Content */
+.project-name {
+  margin: 0;
+  font-size: clamp(22px, 2.1vw, 30px);
+  font-weight: 900;
+  padding: 0 16px;
+  /* ✅ horizontal padding */
+}
+
+.project-desc {
+  margin: 12px 0 0;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--muted, #666);
+  font-weight: 650;
+  max-width: 62ch;
+  padding: 0 16px;
+  /* ✅ horizontal padding */
+}
+
+.project-points {
+  margin: 14px 0 0;
+  padding-left: 18px;
+  color: color-mix(in srgb, var(--text, #000) 86%, transparent);
+  font-weight: 650;
+  line-height: 1.7;
+}
+
+.project-actions {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.project-actions a {
+  padding-left: 12px;
+  /* ✅ extra left padding inside buttons */
+  padding-right: 12px;
+  /* keep balance */
+}
+
+/* Media */
+.project-media {
+  min-height: 260px;
+  overflow: hidden;
+  padding: 0 16px;
+  /* ✅ horizontal padding */
+}
+
+.project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* View all link */
+.view-all {
+  display: inline-block;
+  margin-top: 40px;
+  text-decoration: none;
+  color: var(--accent, #007BFF);
+  font-weight: 700;
+  padding-left: 16px;
+  /* ✅ left padding */
+}
+
+
+/* Mobile */
+@media (max-width: 860px) {
+  .project-card {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 28px 0;
+  }
+
+  .project-media {
+    min-height: 210px;
+  }
+}
+
+/* Disable hover highlight on touch */
+@media (hover: none) {
+  .project-card:hover::before {
+    background: transparent;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.achievements {
+  padding: 60px 20px;
+  background: var(--surface, #f9f9f9);
+}
+
+.achievements-title {
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 900;
+  margin-bottom: 30px;
   text-align: center;
 }
 
-.project img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-}
-
-.view-all {
-  display: inline-block;
-  margin-top: 20px;
-  text-decoration: none;
-  color: #007BFF;
-}
-
-/* Awards Section */
-.awards {
-  padding: 40px;
-}
-
-.award {
-  display: flex;
-  align-items: center;
+.achievements-grid {
+  display: grid;
   gap: 20px;
+  grid-template-columns: repeat(1, 1fr);
 }
 
-.award img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
+@media (min-width: 640px) {
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
+
+@media (min-width: 1024px) {
+  .achievements-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.achievement-card {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #000;
+  border-radius: 12px;
+  /* ✅ rounded corners */
+}
+
+
+
+.image-slider {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  /* ✅ height always equals width */
+}
+
+
+.image-slider img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  border-radius: 12px;
+  /* ✅ match card rounding */
+}
+
+
+.image-slider img.active {
+  opacity: 1;
+}
+
+.achievement-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 12px;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Skills Section */
 .skills {
@@ -86,13 +398,32 @@ body {
 .skills ul {
   list-style: none;
   padding: 0;
+  margin: 0;
+  display: flex;
+  /* ✅ horizontal layout */
+  flex-wrap: wrap;
+  /* ✅ wrap to next line if needed */
+  gap: 12px;
+  /* spacing between tags */
 }
 
 .skills li {
   background: #eee;
-  margin: 5px 0;
-  padding: 10px;
+  /* greyish inner */
+  border: 2px solid #333;
+  /* sharp border */
+  border-radius: 999px;
+  /* ✅ fully semicircle ends */
+  padding: 12px 24px;
+  /* roomy inside */
+  font-size: 1.1rem;
+  /* bigger font */
+  font-weight: 600;
+  color: #000;
+  white-space: nowrap;
+  /* keep each skill in one line */
 }
+
 
 
 
@@ -103,12 +434,26 @@ body {
 /* contact button */
 
 /* Contact Hub */
+/* Desktop / Tablet */
 .contact-hub {
   position: fixed;
   top: 80px;
+  /* distance from top edge */
   right: 80px;
+  /* distance from right edge */
   z-index: 1000;
 }
+
+/* Mobile (small screens) */
+@media (max-width: 480px) {
+  .contact-hub {
+    top: 30px;
+    /* closer to top edge */
+    right: 30px;
+    /* closer to right edge */
+  }
+}
+
 
 /* Main button */
 .contact-btn {
@@ -119,8 +464,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+}
+
+/* Button icon */
+.contact-btn img {
+  width: 90px;
+  height: 90px;
+  filter: invert(1);
+  /* makes icon white if it's black */
+  object-fit: contain;
+  /* ensures it scales correctly */
 }
 
 /* Options row */
@@ -139,12 +494,13 @@ body {
   height: 80px;
   background: white;
   border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Button icon */
 .contact-option img {
   width: 40px;
   height: 40px;
@@ -154,7 +510,8 @@ body {
 .hover-info {
   display: none;
   position: absolute;
-  top: 100px; /* below the button */
+  top: 100px;
+  /* below the button */
   left: 50%;
   transform: translateX(-50%);
   background: #f9f9f9;
@@ -163,9 +520,23 @@ body {
   font-size: 16px;
   font-weight: 500;
   white-space: nowrap;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Invisible hover bridge to prevent gap collapse */
+.contact-option::after {
+  content: "";
+  position: absolute;
+  top: 80px;
+  /* directly below the button */
+  left: 0;
+  right: 0;
+  height: 20px;
+  /* bridge height */
+  background: transparent;
+}
+
+/* Show info when hovering either button or bridge */
 .contact-option:hover .hover-info {
   display: block;
 }
@@ -176,17 +547,38 @@ body {
 }
 
 
+
 /* Animation */
 @keyframes pulse-vibrate {
-  0% { transform: scale(0.3); }
-  20% { transform: scale(1.2); }
-  30% { transform: scale(1.2) translateX(-2px); }
-  35% { transform: scale(1.2) translateX(2px); }
-  40% { transform: scale(1.2) translateX(-2px); }
-  45% { transform: scale(1.2) translateX(2px); }
-  60% { transform: scale(1.2); }
-  100% { transform: scale(0.3); }
+  0% {
+    transform: scale(0.3);
+  }
+
+  20% {
+    transform: scale(1.2);
+  }
+
+  30% {
+    transform: scale(1.2) translateX(-2px);
+  }
+
+  35% {
+    transform: scale(1.2) translateX(2px);
+  }
+
+  40% {
+    transform: scale(1.2) translateX(-2px);
+  }
+
+  45% {
+    transform: scale(1.2) translateX(2px);
+  }
+
+  60% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(0.3);
+  }
 }
-
-
-
