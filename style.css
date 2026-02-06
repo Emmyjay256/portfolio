@@ -5,9 +5,31 @@ body {
   line-height: 1.6;
 }
 
+/* Mobile-specific adjustments */
+/* Mobile-specific adjustments */
+@media (max-width: 640px) {
 
+  /* Prevent any overshoot on small screens */
+  body {
+    overflow-x: hidden;
+  }
 
+  /* If separators or full-bleed elements are the issue */
+  .project-card::before,
+  .project-card::after {
+    width: 100%;
+    /* ✅ use container width instead of viewport */
+    left: 0;
+    /* align flush with edge */
+  }
 
+  /* If grid gaps are pushing cards */
+  .achievements-grid {
+    padding-right: 0;
+    /* ✅ remove unintended right padding */
+    margin-right: 0;
+  }
+}
 
 
 
