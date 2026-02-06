@@ -23,10 +23,18 @@ let contactVisible = false;
 let animFrame;
 let scale = 1;
 let growing = true;
-const button = document.querySelector('.contact-btn');
+let button;
+
+// Wait until DOM is ready
+document.addEventListener("DOMContentLoaded", () => {
+  button = document.querySelector('.contact-btn');
+  startAnimation();
+});
 
 function animateButton() {
-  // simple pulse logic
+  if (!button) return;
+
+  // pulse logic
   if (growing) {
     scale += 0.02;
     if (scale >= 1.2) growing = false;
@@ -35,25 +43,26 @@ function animateButton() {
     if (scale <= 0.8) growing = true;
   }
 
-  // apply transform
-  button.style.transform = `scale(${scale})`;
-
   // vibration effect at peak
+  let vibration = "";
   if (scale >= 1.2) {
-    button.style.transform += ` translateX(${Math.sin(Date.now()/50)*3}px)`;
+    vibration = ` translateX(${Math.sin(Date.now()/50)*3}px)`;
   }
+
+  // apply transform (overwrite, don’t append)
+  button.style.transform = `scale(${scale})${vibration}`;
 
   animFrame = requestAnimationFrame(animateButton);
 }
 
 function startAnimation() {
-  if (!animFrame) animateButton();
+  if (!animFrame) animFrame = requestAnimationFrame(animateButton);
 }
 
 function stopAnimation() {
   cancelAnimationFrame(animFrame);
   animFrame = null;
-  button.style.transform = 'scale(1)'; // reset
+  if (button) button.style.transform = 'scale(1)';
 }
 
 function toggleContactOptions() {
@@ -77,9 +86,6 @@ window.addEventListener('scroll', () => {
     startAnimation();
   }
 });
-
-// kick off animation initially
-startAnimation();
 
 
 
