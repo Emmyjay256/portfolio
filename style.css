@@ -568,6 +568,48 @@ body {
   cursor: pointer;
 }
 
+/* Mobile (small screens) */
+@media (max-width: 480px) {
+  .contact-options {
+    flex-direction: column;
+    /* ✅ stack vertically */
+    gap: 15px;
+    position: absolute;
+    top: 120px;
+    /* below the main button */
+    right: auto;
+    /* remove right offset */
+    left: -100px;
+    /* push to the left of the main button */
+  }
+
+  /* Adjust hover info for mobile */
+  .hover-info {
+    display: none;
+    /* ✅ disable hover panels on mobile */
+    position: absolute;
+    top: 50%;
+    left: -120px;
+    /* show to the left if you want tap‑based info */
+    transform: translateY(-50%);
+  }
+
+  /* Optional: disable hover entirely on mobile */
+  .contact-option:hover .hover-info {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Animation */
