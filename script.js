@@ -14,3 +14,13 @@ fetch('projects.json')
     });
   })
   .catch(error => console.error('Error loading projects:', error));
+
+
+
+
+
+function toggleContactOptions() {
+  const options = document.querySelector('.contact-options');
+  options.style.display = options.style.display === 'flex' ? 'none' : 'flex';
+}
+
