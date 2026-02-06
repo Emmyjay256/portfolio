@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Smart Energy Meter",
+    "description": "IoT-based energy monitoring system.",
+    "image": "meter.jpg"
+  },
+  {
+    "title": "Solar Inverter Design",
+    "description": "Designed a low-cost solar inverter for rural electrification.",
+    "image": "inverter.jpg"
+  },
+  {
+    "title": "Analog Filter Design",
+    "description": "Implemented and tested analog filters for signal processing.",
+    "image": "filter.jpg"
+  }
+]
