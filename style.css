@@ -575,7 +575,7 @@ body {
     /* ✅ stack vertically */
     gap: 15px;
     position: absolute;
-    top: 120px;
+    top: 40px;
     /* below the main button */
     right: auto;
     /* remove right offset */
