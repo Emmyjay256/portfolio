@@ -93,3 +93,63 @@ body {
   margin: 5px 0;
   padding: 10px;
 }
+
+
+
+
+
+
+
+/* contact button */
+
+/* Contact Button */
+.contact-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #007BFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+  animation: pulse-vibrate 3s infinite;
+}
+
+.contact-btn img {
+  width: 30px;
+  height: 30px;
+  filter: invert(1); /* makes icon white if it's black */
+}
+
+/* Animation: expand → vibrate → shrink */
+@keyframes pulse-vibrate {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.2);
+  }
+  30% {
+    transform: scale(1.2) translateX(-2px);
+  }
+  35% {
+    transform: scale(1.2) translateX(2px);
+  }
+  40% {
+    transform: scale(1.2) translateX(-2px);
+  }
+  45% {
+    transform: scale(1.2) translateX(2px);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
