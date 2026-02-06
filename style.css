@@ -110,11 +110,8 @@ body {
   z-index: 1000;
 }
 
-/* Main Button */
+/* Main button */
 .contact-btn {
-  position: fixed;
-  top: 80px;
-  right: 80px;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -124,17 +121,9 @@ body {
   justify-content: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   cursor: pointer;
-  transition: transform 0.2s ease;
 }
 
-
-.contact-btn img {
-  width: 90px;
-  height: 90px;
-  filter: invert(1);
-}
-
-/* Contact Options */
+/* Options row */
 .contact-options {
   display: none;
   flex-direction: row-reverse;
@@ -161,19 +150,20 @@ body {
   height: 40px;
 }
 
-/* Hover info for desktop */
+/* Hover info panel */
 .hover-info {
   display: none;
   position: absolute;
-  top: 50%;
-  left: -220px; /* positions text to the left */
-  transform: translateY(-50%);
-  background: #f4f4f4;
-  padding: 6px 10px;
-  border-radius: 6px;
-  font-size: 14px;
+  top: 100px; /* below the button */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f9f9f9;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
   white-space: nowrap;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .contact-option:hover .hover-info {
@@ -181,7 +171,7 @@ body {
 }
 
 .copy {
-  margin-left: 8px;
+  margin-left: 10px;
   cursor: pointer;
 }
 
