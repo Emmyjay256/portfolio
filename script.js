@@ -19,16 +19,26 @@ fetch('projects.json')
 
 
 
+let lastScrollY = window.scrollY;
+let contactVisible = false;
+
 function toggleContactOptions(button) {
   const options = document.querySelector('.contact-options');
-  options.style.display = options.style.display === 'flex' ? 'none' : 'flex';
-
-  // Stop animation when expanded
-  if (options.style.display === 'flex') {
-    button.style.animation = 'none';
-  } else {
-    button.style.animation = 'pulse-vibrate 3s infinite';
-  }
+  contactVisible = !contactVisible;
+  options.style.display = contactVisible ? 'flex' : 'none';
+  button.style.animation = contactVisible ? 'none' : 'pulse-vibrate 3s infinite';
 }
+
+// Hide contact options on significant scroll
+window.addEventListener('scroll', () => {
+  const currentScrollY = window.scrollY;
+  if (contactVisible && Math.abs(currentScrollY - lastScrollY) > 100) {
+    document.querySelector('.contact-options').style.display = 'none';
+    document.querySelector('.contact-btn').style.animation = 'pulse-vibrate 3s infinite';
+    contactVisible = false;
+  }
+  lastScrollY = currentScrollY;
+});
+
 
 
