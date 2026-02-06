@@ -20,29 +20,67 @@ fetch('projects.json')
 
 
 let contactVisible = false;
+let animFrame;
+let scale = 1;
+let growing = true;
+const button = document.querySelector('.contact-btn');
 
-function toggleContactOptions(button) {
+function animateButton() {
+  // simple pulse logic
+  if (growing) {
+    scale += 0.02;
+    if (scale >= 1.2) growing = false;
+  } else {
+    scale -= 0.02;
+    if (scale <= 0.8) growing = true;
+  }
+
+  // apply transform
+  button.style.transform = `scale(${scale})`;
+
+  // vibration effect at peak
+  if (scale >= 1.2) {
+    button.style.transform += ` translateX(${Math.sin(Date.now()/50)*3}px)`;
+  }
+
+  animFrame = requestAnimationFrame(animateButton);
+}
+
+function startAnimation() {
+  if (!animFrame) animateButton();
+}
+
+function stopAnimation() {
+  cancelAnimationFrame(animFrame);
+  animFrame = null;
+  button.style.transform = 'scale(1)'; // reset
+}
+
+function toggleContactOptions() {
   const options = document.querySelector('.contact-options');
   contactVisible = !contactVisible;
 
   if (contactVisible) {
     options.style.display = 'flex';
-    button.style.animation = 'none'; // stop animation
+    stopAnimation(); // stop pulse when expanded
   } else {
     options.style.display = 'none';
-    button.style.animation = 'pulse-vibrate 3s infinite'; // restart animation
+    startAnimation(); // restart pulse when collapsed
   }
 }
 
-// Hide contact options on ANY scroll
+// Hide on any scroll
 window.addEventListener('scroll', () => {
   if (contactVisible) {
     document.querySelector('.contact-options').style.display = 'none';
-    const button = document.querySelector('.contact-btn');
-    button.style.animation = 'pulse-vibrate 3s infinite'; // restart animation
     contactVisible = false;
+    startAnimation();
   }
 });
+
+// kick off animation initially
+startAnimation();
+
 
 
 
