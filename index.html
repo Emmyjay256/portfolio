@@ -56,17 +56,38 @@
     <img src="message-icon.png" alt="Contact Icon">
   </div>
   <div class="contact-options">
-    <a href="https://wa.me/256786877451" target="_blank" class="contact-option whatsapp">
-      <img src="whatsapp-icon.png" alt="WhatsApp">
-    </a>
-    <a href="tel:+256786877451" class="contact-option call">
-      <img src="call-icon.png" alt="Call">
-    </a>
-    <a href="mailto:adonguemmaodaka@gmail.com" class="contact-option email">
-      <img src="email-icon.png" alt="Email">
-    </a>
+    <!-- WhatsApp -->
+    <div class="contact-option whatsapp">
+      <a href="https://wa.me/256786877451" target="_blank">
+        <img src="whatsapp-icon.png" alt="WhatsApp">
+      </a>
+      <div class="hover-info">
+        +256786877451 <span class="copy" onclick="copyText('+256786877451')">📋</span>
+      </div>
+    </div>
+
+    <!-- Call -->
+    <div class="contact-option call">
+      <a href="tel:+256786877451">
+        <img src="call-icon.png" alt="Call">
+      </a>
+      <div class="hover-info">
+        +256786877451 <span class="copy" onclick="copyText('+256786877451')">📋</span>
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="contact-option email">
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=adonguemmaodaka@gmail.com" target="_blank">
+        <img src="email-icon.png" alt="Email">
+      </a>
+      <div class="hover-info">
+        adonguemmaodaka@gmail.com <span class="copy" onclick="copyText('adonguemmaodaka@gmail.com')">📋</span>
+      </div>
+    </div>
   </div>
 </div>
+
 
 
 </body>
