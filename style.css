@@ -152,4 +152,37 @@ body {
     transform: scale(0.3);
   }
 }
+/* Contact Hub Container */
+.contact-hub {
+  position: fixed;
+  top: 80px;
+  right: 80px;
+  z-index: 1000;
+}
+
+/* Contact Options */
+.contact-options {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.contact-option {
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-option img {
+  width: 30px;
+  height: 30px;
+}
+
 
