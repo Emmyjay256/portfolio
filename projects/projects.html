@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Portfolio - Project Blocks</title>
+    <link rel="stylesheet" href="projects.css" />
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <div class="dot-pattern"></div>
+
+    <div class="project-header">
+        <h1 class="main-title">All Projects</h1>
+        <p class="philosophy-statement">
+            Sustainable innovation in Africa must transcend heavy early funding and instead build first on customer need
+            through proof of adoption before capitalizing on the small available capital to prevent reinforcement of the
+            already existing tech bias.
+        </p>
+    </div>
+
+    <div class="project-section">
+
+        <div class="project-block">
+            <div class="project-tag">satellite-telemetry.exe</div>
+            <div class="project-image">
+                <img src="https://via.placeholder.com/450x300/f0f0f0/000000?text=Telemetry+Software"
+                    alt="Satellite Ground Software">
+            </div>
+            <div class="project-info">
+                <h2 class="project-title">Ground Software & Telemetry</h2>
+                <p class="project-description">
+                    Leading the telemetry systems for a student satellite program. This project focuses on high-speed
+                    data acquisition and real-time visualization of orbital parameters, ensuring robust communication
+                    between the ground station and the payload.
+                </p>
+            </div>
+        </div>
+
+        <div class="project-block">
+            <div class="project-tag">rotating-wheel-capital.sys</div>
+            <div class="project-image">
+                <img src="https://via.placeholder.com/450x300/f0f0f0/000000?text=Inventory+System"
+                    alt="Inventory Management Software">
+            </div>
+            <div class="project-info">
+                <h2 class="project-title">Inventory Control Engine</h2>
+                <p class="project-description">
+                    A custom-built inventory management system designed for engineering firms. It implements the
+                    "Rotating Wheel of Capital" logic, optimizing resource allocation and machine procurement schedules
+                    through a streamlined Firebase backend.
+                </p>
+            </div>
+        </div>
+
+        <div class="project-block">
+            <div class="project-tag">hardware-reclaim.bin</div>
+            <div class="project-image">
+                <img src="https://via.placeholder.com/450x300/f0f0f0/000000?text=Reverse+Engineering"
+                    alt="Hardware Reverse Engineering">
+            </div>
+            <div class="project-info">
+                <h2 class="project-title">STI Secretariat Reverse Engineering</h2>
+                <p class="project-description">
+                    Deconstructing and mapping proprietary hardware components to improve local repairability and
+                    innovation. This project involves deep signal analysis and CAD reconstruction to reclaim engineering
+                    legacies.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <!-- CONTACT HUB -->
+    <div class="contact-hub">
+        <div class="contact-btn" onclick="toggleContactOptions()">
+            <img src="../../message-icon.png" alt="Contact Icon" />
+        </div>
+
+        <div class="contact-options">
+            <div class="contact-option whatsapp">
+                <a id="whatsappLink" href="#" target="_blank" rel="noopener">
+                    <img src="../../whatsapp-icon.png" alt="WhatsApp" />
+                </a>
+                <div class="hover-info">
+                    WhatsApp: <span id="whatsappText"></span>
+                    <span class="copy" onclick="copyText(document.getElementById('whatsappText').textContent)">📋</span>
+                </div>
+            </div>
+
+            <div class="contact-option call">
+                <a id="callLink" href="#">
+                    <img src="../../call-icon.png" alt="Call" />
+                </a>
+                <div class="hover-info">
+                    Call: <span id="callText"></span>
+                    <span class="copy" onclick="copyText(document.getElementById('callText').textContent)">📋</span>
+                </div>
+            </div>
+
+            <div class="contact-option email">
+                <a id="emailLink" href="#" target="_blank" rel="noopener">
+                    <img src="../../email-icon.png" alt="Email" />
+                </a>
+                <div class="hover-info">
+                    Email: <span id="emailText"></span>
+                    <span class="copy" onclick="copyText(document.getElementById('emailText').textContent)">📋</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="projects.js"></script>
+</body>
+
+</html>
