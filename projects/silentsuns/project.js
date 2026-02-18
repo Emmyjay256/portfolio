@@ -5,62 +5,53 @@
    (EVERY PROJECT WILL ONLY SUPPLY THESE)
 ========================= */
 const PROJECT = {
-    title: "HAJAMBO: UGANDA’S OFFLINE + MULTILINGUAL SOCIAL CLOUD",
+    title: "SILENT SUNS - NASA SPACE APPS CHALLENGE",
 
     overview:
-        "Hajambo is a next-generation social platform built entirely for Uganda. It connects citizens online, offline, and in every local language (Luganda, Runyankole, Acholi, etc.) while ensuring national data sovereignty by running on local infrastructure.",
+        "This project was built for the NASA Space Apps Challenge to identify planetary transits and visualize them through a 3D interface. It bridges the gap between deep-learning predictions and interactive web storytelling.",
 
-    status: "Built for STI Industry 4.0+ Hackathon (2025)",
-    role: "Team Leader, System Architect, and Designer",
+    status: "Completed (Oct 2024)",
+    role: "Team Lead / Developer",
 
     coreTech: [
         "Kotlin",
-        "XML",
-        "Node.js",
-        "USSD (Africa's Talking)",
-        "Docker",
-        "Cloudflare Quick Tunnels",
-        "Mesh Networking"
+        "Three.js",
+        "Python (Colab)",
+        "OpenAI API",
+        "HTML/CSS",
+        "GCS",
+        "GitHub Pages"
     ],
 
-    heroImage: "hajambo.png",
+    heroImage: "silentsuns.png",
 
     problemChallenge:
-        "Most social apps require constant internet and English proficiency, which excludes millions of Ugandans. Data is expensive, and coverage is patchy. I saw the need for a platform that works on a feature phone via USSD just as well as it works on a smartphone.",
+        "Processing NASA's astronomical data is one thing, but making it understandable to the public is another. We needed a way to not only predict where these transits were happening using AI but also show them in a way that felt real and accessible.",
 
     problemGoal:
-        'To bridge the digital divide by creating a "Social Cloud" that supports local languages and works without an active internet connection through mesh networking.',
+        'To create an end-to-end platform that combines AI-driven transit discovery with a 3D interactive orrery and real-time facts about the cosmos.',
 
     architectureAndDesign:
-        "The architecture is a multi-layered circuit designed for resilience: The Sovereign Cloud: We were the first team to use Uganda’s ABQ Sovereign Cloud. I had to set up the VM on a VPN to serve the backend. Connectivity Layers: The system uses USSD (*384*43893#) for feature phones via Africa’s Talking, and a Kotlin/XML mobile app for smartphones. Offline Mesh: For users without internet, I implemented Nearby Mode using Bluetooth and mesh networking to allow chat and file sharing. AI Translation: A real-time engine that bridges the gap between Uganda's diverse local languages.",
+        "The tech stack was quite broad to handle the different needs of the project: AI Training: We used Google Colab for training the model and performed inference on Google Cloud Storage (GCS) to manage the datasets efficiently. This took most of the time since we had to process raw FITs files from NASA telescopes into CSV files that we could use for training. The Web Front-end: Built using HTML and CSS, hosted on GitHub Pages. We integrated the OpenAI API to power a specific section of the site that generates and serves random, interesting facts about exoplanets to keep users engaged. 3D Visualization: We used Three.js to build two major components: a 3D Earth for transit locations and a separate 3D module showing the orbit of the discovered planet around its respective sun.",
 
     buildProcess:
-        "The main technical hurdle was the backend deployment on the Sovereign Cloud VM. At first, I was using Docker and Coolify, but that didn't play well with the Cloudflare Quick Tunnels. Every time I would commit from Coolify, the internal IP the tunnel was pointing to would change, breaking the connection. I had to engineer a solution to run an endless quick tunnel so the backend could consistently communicate with the Africa's Talking API and the mobile app. Another big task was the Smart Sync logic. I had to ensure that if a user posted or messaged while in \"Nearby Mode\" (offline), the data would automatically upload and sync with the Sovereign Cloud the moment they stepped back into a data zone. Managing the Node.js backend to handle these short-lived connections and large media uploads while maintaining high performance was a heavy lift.",
+        "The main hurdle was the math involved in Three.js. Making the globe was okay, but the real difficulty was making pins that could drop in the exact locations on Earth where the transits would be visible. We had to ensure the coordinate mapping was perfect so the pins stayed locked to their geographic points. This meant carefully UV unwrapping the globe in Blender, adding the earth texture then using known geographical features to map coordinates on the 3D globe to those on earth. Another interesting part was the 3D orbit simulation. We had to model the planet's path around its star accurately while keeping the performance smooth in the browser. Wiring up the OpenAI API was also key—it turned the site from a static viewer into an educational tool that could answer or give facts about the very exoplanets the AI was identifying.",
 
     performanceAndResults:
-        "We successfully demonstrated the first-ever social integration on the Ugandan Sovereign Cloud. The platform proved it could handle real-time AI translation and USSD account creation simultaneously. By using social camouflage—appearing as a simple social app—we actually built a robust research infrastructure that promotes national tech independence and aligns with the STI 4.0+ vision.",
+        "We successfully integrated AI inference with a live web interface. The site served as a 'one-stop shop' where you could see the AI's results, watch the 3D orbital mechanics of the discovery, and learn random exoplanet facts via the AI connection. Users could easily upload their own FITs files for inference and analysis. By hosting on GitHub Pages, we ensured the site was lightweight and accessible to anyone without needing heavy hardware to run the 3D simulations.",
 
     futurePlans:
-        "I am looking at scaling the Mesh Networking capabilities to support larger file transfers over longer distances without data. I also plan to refine the AI translation models to include even more dialects from across East Africa, eventually licensing the USSD/AI tech to other local startups.",
+        "We plan to improve this and use in any related competitions in the near future. Apart from that, this was just a competition project.",
 
     assets: {
-        github: "https://github.com/Emmyjay256/hajambo-backend",
-        demo: "",
+        github: "https://github.com/Emmyjay256/silentsuns",
+        demo: "https://emmyjay256.github.io/silentsuns/",
 
         gallery: [
-            { src: "hajambo1.jpg", caption: "USSD screenshots" },
-            { src: "hajambo2.jpg", caption: "Application UI" },
-            { src: "hajambo3.jpg", caption: "PDF page 1" },
-            { src: "hajambo4.jpg", caption: "PDF page 2" },
-            { src: "hajambo5.jpg", caption: "PDF page 3" },
-            { src: "hajambo6.jpg", caption: "PDF page 4" },
-            { src: "hajambo7.jpg", caption: "PDF page 5" },
-            { src: "hajambo8.jpg", caption: "PDF page 6" },
-            { src: "hajambo9.jpg", caption: "PDF page 7" },
-            { src: "hajambo10.jpg", caption: "PDF page 8" },
-            { src: "hajambo11.jpg", caption: "PDF page 9" },
-            { src: "hajambo12.jpg", caption: "PDF page 10" },
-            { src: "hajambo13.jpg", caption: "PDF page 11" }
+            { src: "silentsuns1.jpg", caption: "FITS upload platgorm" },
+            { src: "silentsuns2.jpg", caption: "Planet orbit simulation" },
+            { src: "silentsuns3.jpg", caption: "Earth pin dropper" },
+            { src: "silentsuns4.jpg", caption: "Upload platform with results" }
         ]
     },
 

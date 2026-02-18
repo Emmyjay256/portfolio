@@ -7,7 +7,7 @@ fetch('projects.json')
 
       document.getElementById(`project${index}-title`).textContent = project.title;
       document.getElementById(`project${index}-desc`).textContent = project.description;
-      document.getElementById(`project${index}-img`).src = `assets/homepage/projects/${project.image}`;
+      document.getElementById(`project${index}-img`).src = `${project.image}`;
       document.getElementById(`project${index}-img`).alt = project.title;
       document.getElementById(`project${index}-link`).href = project.link;
     });

@@ -5,62 +5,51 @@
    (EVERY PROJECT WILL ONLY SUPPLY THESE)
 ========================= */
 const PROJECT = {
-    title: "HAJAMBO: UGANDA’S OFFLINE + MULTILINGUAL SOCIAL CLOUD",
+    title: "SPACECOPY (CANADA) - LUNAR 3D PRINTER RESEARCH AND DESIGN",
 
     overview:
-        "Hajambo is a next-generation social platform built entirely for Uganda. It connects citizens online, offline, and in every local language (Luganda, Runyankole, Acholi, etc.) while ensuring national data sovereignty by running on local infrastructure.",
+        "SpaceCopy is a Canadian aerospace firm developing advanced 3D printing technology for the lunar surface. My work focuses on the technical feasibility, material dynamics, and electrical power systems required to sustain manufacturing in extreme lunar environments.",
 
-    status: "Built for STI Industry 4.0+ Hackathon (2025)",
-    role: "Team Leader, System Architect, and Designer",
+    status: "Ongoing / Research & Development",
+    role: "Electrical & Systems Junior Research Associate",
 
     coreTech: [
-        "Kotlin",
-        "XML",
-        "Node.js",
-        "USSD (Africa's Talking)",
-        "Docker",
-        "Cloudflare Quick Tunnels",
-        "Mesh Networking"
+        "Python (Mathematical Modeling)",
+        "SMPS Design",
+        "Systems Engineering",
+        "Lunar Regolith Feasibility"
     ],
 
-    heroImage: "hajambo.png",
+    heroImage: "spacecopy.jpg",
 
     problemChallenge:
-        "Most social apps require constant internet and English proficiency, which excludes millions of Ugandans. Data is expensive, and coverage is patchy. I saw the need for a platform that works on a feature phone via USSD just as well as it works on a smartphone.",
+        "Manufacturing on the Moon is incredibly difficult due to extreme temperature fluctuations, vacuum conditions, and the unique properties of lunar regolith. To make long-term lunar habitation possible, we need 3D printers that are energy-efficient and capable of consistent material flow under low-gravity conditions.",
 
     problemGoal:
-        'To bridge the digital divide by creating a "Social Cloud" that supports local languages and works without an active internet connection through mesh networking.',
+        'To model and design the electrical and fluid dynamics of a 3D printer that can survive and operate on the lunar surface.',
 
     architectureAndDesign:
-        "The architecture is a multi-layered circuit designed for resilience: The Sovereign Cloud: We were the first team to use Uganda’s ABQ Sovereign Cloud. I had to set up the VM on a VPN to serve the backend. Connectivity Layers: The system uses USSD (*384*43893#) for feature phones via Africa’s Talking, and a Kotlin/XML mobile app for smartphones. Offline Mesh: For users without internet, I implemented Nearby Mode using Bluetooth and mesh networking to allow chat and file sharing. AI Translation: A real-time engine that bridges the gap between Uganda's diverse local languages.",
+        "My contributions sit at the intersection of software modeling and hardware architecture: Material Flow Dynamics: Developed Python models to simulate and size the rates of flow for materials within the printer. This ensures the extrusion process is predictable and stable. Electrical Architecture: I am currently designing the SMPS (Switched-Mode Power Supply) circuits. In space, power efficiency is everything; these circuits must provide stable, high-efficiency power to the printer's components while minimizing heat waste.",
 
     buildProcess:
-        "The main technical hurdle was the backend deployment on the Sovereign Cloud VM. At first, I was using Docker and Coolify, but that didn't play well with the Cloudflare Quick Tunnels. Every time I would commit from Coolify, the internal IP the tunnel was pointing to would change, breaking the connection. I had to engineer a solution to run an endless quick tunnel so the backend could consistently communicate with the Africa's Talking API and the mobile app. Another big task was the Smart Sync logic. I had to ensure that if a user posted or messaged while in \"Nearby Mode\" (offline), the data would automatically upload and sync with the Sovereign Cloud the moment they stepped back into a data zone. Managing the Node.js backend to handle these short-lived connections and large media uploads while maintaining high performance was a heavy lift.",
+        "Working on a lunar project requires a 'zero-failure' mindset. My methodology involves: Feasibility Research: Investigating the physical constraints of the lunar environment and how they impact 3D printing mechanics. Mathematical Modeling: Using Python to create digital twins of the printer's internal systems to test flow rates before any hardware is committed. Circuit Engineering: Focusing on the electrical architecture to ensure the printer can interface with lunar power grids (like solar or nuclear) while maintaining a compact, rugged form factor.",
 
     performanceAndResults:
-        "We successfully demonstrated the first-ever social integration on the Ugandan Sovereign Cloud. The platform proved it could handle real-time AI translation and USSD account creation simultaneously. By using social camouflage—appearing as a simple social app—we actually built a robust research infrastructure that promotes national tech independence and aligns with the STI 4.0+ vision.",
+        "While specific project outcomes are protected by NDA, my work provides the mathematical and electrical foundation necessary for the printer's success. The Python models have allowed for the optimization of material sizing, and the current electrical designs are focused on meeting the rigorous standards of space-grade hardware.",
 
     futurePlans:
-        "I am looking at scaling the Mesh Networking capabilities to support larger file transfers over longer distances without data. I also plan to refine the AI translation models to include even more dialects from across East Africa, eventually licensing the USSD/AI tech to other local startups.",
+        "I am continuing to refine the electrical power systems to handle the volatile thermal environment of the Moon. My goal is to bridge the gap between theoretical lunar manufacturing and a functional, space-ready unit.",
 
     assets: {
-        github: "https://github.com/Emmyjay256/hajambo-backend",
+        github: "#",
         demo: "",
 
         gallery: [
-            { src: "hajambo1.jpg", caption: "USSD screenshots" },
-            { src: "hajambo2.jpg", caption: "Application UI" },
-            { src: "hajambo3.jpg", caption: "PDF page 1" },
-            { src: "hajambo4.jpg", caption: "PDF page 2" },
-            { src: "hajambo5.jpg", caption: "PDF page 3" },
-            { src: "hajambo6.jpg", caption: "PDF page 4" },
-            { src: "hajambo7.jpg", caption: "PDF page 5" },
-            { src: "hajambo8.jpg", caption: "PDF page 6" },
-            { src: "hajambo9.jpg", caption: "PDF page 7" },
-            { src: "hajambo10.jpg", caption: "PDF page 8" },
-            { src: "hajambo11.jpg", caption: "PDF page 9" },
-            { src: "hajambo12.jpg", caption: "PDF page 10" },
-            { src: "hajambo13.jpg", caption: "PDF page 11" }
+            { src: "spacecopy1.jpg", caption: "Space Copy moon render" },
+            { src: "spacecopy2.jpg", caption: "Space Copy FDM printer" },
+            { src: "spacecopy3.jpg", caption: "Space Copy" },
+            { src: "spacecopy4.jpg", caption: "Lunar printing base" },
+            { src: "spacecopy5.jpg", caption: "Print head" }
         ]
     },
 

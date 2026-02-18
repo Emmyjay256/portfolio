@@ -1,0 +1,197 @@
+<!-- project.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project • Template</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Sora:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="project.css" />
+</head>
+
+<body>
+    <!-- HERO -->
+    <header class="project-hero">
+        <div class="hero-inner">
+            <div class="hero-media">
+                <img id="heroImage" src="" alt="Project hero image" />
+            </div>
+
+            <div class="hero-content">
+                <p class="kicker" id="projectStatusKicker"></p>
+                <h1 id="projectTitle"></h1>
+                <p class="overview" id="projectOverview"></p>
+
+                <div class="meta-strip">
+                    <div class="meta-pill">
+                        <span class="meta-label">Status</span>
+                        <span class="meta-value" id="projectStatus"></span>
+                    </div>
+
+                    <div class="meta-pill">
+                        <span class="meta-label">Role</span>
+                        <span class="meta-value" id="projectRole"></span>
+                    </div>
+
+                    <div class="meta-pill meta-pill--wide">
+                        <span class="meta-label">Core Tech</span>
+                        <span class="meta-value" id="projectTech"></span>
+                    </div>
+                </div>
+
+                <div class="hero-actions">
+                    <a id="githubBtn" class="btn btn-primary" href="#" target="_blank" rel="noopener">GitHub</a>
+                    <a id="demoBtn" class="btn btn-ghost" href="#" target="_blank" rel="noopener">Live Demo</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="page">
+        <!-- Problem statement & Objective -->
+        <section class="section">
+            <div class="section-head">
+                <h2>Problem Statement & Objective</h2>
+            </div>
+
+            <h3>The challenge</h3>
+            <p id="challengeText"></p>
+
+            <h3>The goal</h3>
+            <p id="goalText"></p>
+        </section>
+
+        <!-- System Architecture & Design -->
+        <section class="section">
+            <div class="section-head">
+                <h2>System Architecture & Design</h2>
+            </div>
+
+            <p id="architectureText"></p>
+        </section>
+
+        <!-- The Build Process -->
+        <section class="section">
+            <div class="section-head">
+                <h2>The Build Process</h2>
+            </div>
+
+            <p id="buildProcessText"></p>
+        </section>
+
+        <!-- Performance & Results -->
+        <section class="section">
+            <div class="section-head">
+                <h2>Performance & Results</h2>
+            </div>
+
+            <p id="performanceText"></p>
+        </section>
+
+        <!-- Future Plans -->
+        <section class="section">
+            <div class="section-head">
+                <h2>Future Plans</h2>
+            </div>
+
+            <p id="futureText"></p>
+        </section>
+
+        <!-- Project Assets -->
+        <section class="section">
+            <div class="section-head">
+                <h2>Project Assets</h2>
+            </div>
+
+            <p>
+                <a id="githubLink" href="#" target="_blank" rel="noopener">GitHub Repository</a>
+                <span class="muted">•</span>
+                <a id="demoLink" href="#" target="_blank" rel="noopener">Live Demo</a>
+            </p>
+        </section>
+
+        <!-- Gallery -->
+        <section class="section">
+            <div class="section-head">
+                <h2>Project Assets Gallery</h2>
+                <p class="muted">Click an image to view it large.</p>
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid"></div>
+
+            <!-- Lightbox -->
+            <div class="lightbox" id="lightbox" aria-hidden="true">
+                <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+                <div class="lightbox-content" role="dialog" aria-modal="true" aria-label="Image preview">
+                    <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">✕</button>
+                    <img id="lightboxImg" src="" alt="Preview" />
+                    <div class="lightbox-caption" id="lightboxCaption"></div>
+
+                    <div class="lightbox-nav">
+                        <button class="lightbox-btn" id="prevBtn" aria-label="Previous image">◀</button>
+                        <button class="lightbox-btn" id="nextBtn" aria-label="Next image">▶</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom nav -->
+        <section class="section">
+            <div class="bottom-nav">
+                <a class="btn btn-ghost" href="projects.html">← Back to Projects</a>
+                <a class="btn btn-primary" href="index.html">Home</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- CONTACT HUB -->
+    <div class="contact-hub">
+        <div class="contact-btn" onclick="toggleContactOptions()">
+            <img src="../../message-icon.png" alt="Contact Icon" />
+        </div>
+
+        <div class="contact-options">
+            <div class="contact-option whatsapp">
+                <a id="whatsappLink" href="#" target="_blank" rel="noopener">
+                    <img src="../../whatsapp-icon.png" alt="WhatsApp" />
+                </a>
+                <div class="hover-info">
+                    WhatsApp: <span id="whatsappText"></span>
+                    <span class="copy" onclick="copyText(document.getElementById('whatsappText').textContent)">📋</span>
+                </div>
+            </div>
+
+            <div class="contact-option call">
+                <a id="callLink" href="#">
+                    <img src="../../call-icon.png" alt="Call" />
+                </a>
+                <div class="hover-info">
+                    Call: <span id="callText"></span>
+                    <span class="copy" onclick="copyText(document.getElementById('callText').textContent)">📋</span>
+                </div>
+            </div>
+
+            <div class="contact-option email">
+                <a id="emailLink" href="#" target="_blank" rel="noopener">
+                    <img src="../../email-icon.png" alt="Email" />
+                </a>
+                <div class="hover-info">
+                    Email: <span id="emailText"></span>
+                    <span class="copy" onclick="copyText(document.getElementById('emailText').textContent)">📋</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="project.js"></script>
+</body>
+
+</html>

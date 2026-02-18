@@ -5,62 +5,50 @@
    (EVERY PROJECT WILL ONLY SUPPLY THESE)
 ========================= */
 const PROJECT = {
-    title: "HAJAMBO: UGANDA’S OFFLINE + MULTILINGUAL SOCIAL CLOUD",
+    title: "UGANDA MATH CONTEST PREP APP",
 
     overview:
-        "Hajambo is a next-generation social platform built entirely for Uganda. It connects citizens online, offline, and in every local language (Luganda, Runyankole, Acholi, etc.) while ensuring national data sovereignty by running on local infrastructure.",
+        "This app helps Ugandan students in High School get access to past papers of the Mathematics contest and prepares them with quizzes to qualify for international math olympiads.",
 
-    status: "Built for STI Industry 4.0+ Hackathon (2025)",
-    role: "Team Leader, System Architect, and Designer",
+    status: "Version 3 (Nov 2025) Completed",
+    role: "Solo Developer",
 
     coreTech: [
-        "Kotlin",
+        "Java",
         "XML",
-        "Node.js",
-        "USSD (Africa's Talking)",
-        "Docker",
-        "Cloudflare Quick Tunnels",
-        "Mesh Networking"
+        "Android Studio",
+        "Kotlin"
     ],
 
-    heroImage: "hajambo.png",
+    heroImage: "mathapp.png",
 
     problemChallenge:
-        "Most social apps require constant internet and English proficiency, which excludes millions of Ugandans. Data is expensive, and coverage is patchy. I saw the need for a platform that works on a feature phone via USSD just as well as it works on a smartphone.",
+        "Many students around Uganda do not have access to training material for the national math contest. This has led to a disproportionate rate of passing for students away from big schools and central Uganda. I faced the same challenge the first time I did the math contest, though I managed to qualify for the International Mathematics Olympiad in Japan.",
 
     problemGoal:
-        'To bridge the digital divide by creating a "Social Cloud" that supports local languages and works without an active internet connection through mesh networking.',
+        'To make math contest training material accessible and offline.',
 
     architectureAndDesign:
-        "The architecture is a multi-layered circuit designed for resilience: The Sovereign Cloud: We were the first team to use Uganda’s ABQ Sovereign Cloud. I had to set up the VM on a VPN to serve the backend. Connectivity Layers: The system uses USSD (*384*43893#) for feature phones via Africa’s Talking, and a Kotlin/XML mobile app for smartphones. Offline Mesh: For users without internet, I implemented Nearby Mode using Bluetooth and mesh networking to allow chat and file sharing. AI Translation: A real-time engine that bridges the gap between Uganda's diverse local languages.",
+        "The app is made of 3 main study sections. The first is the problems section, which has all past papers for both A and O level. The next is the math ladder section, which has questions of varying difficulty that you do personally to test your math and check your answers in real time. The last is the randQu section. This section has thousands of random questions whose difficulty varies heavily and tests students' Math rigor; answers are not provided. I processed papers from over a decade ago, split them into PDFs for each year with their answers, and shipped the past paper section with a PDF viewer custom-made with Java.",
 
     buildProcess:
-        "The main technical hurdle was the backend deployment on the Sovereign Cloud VM. At first, I was using Docker and Coolify, but that didn't play well with the Cloudflare Quick Tunnels. Every time I would commit from Coolify, the internal IP the tunnel was pointing to would change, breaking the connection. I had to engineer a solution to run an endless quick tunnel so the backend could consistently communicate with the Africa's Talking API and the mobile app. Another big task was the Smart Sync logic. I had to ensure that if a user posted or messaged while in \"Nearby Mode\" (offline), the data would automatically upload and sync with the Sovereign Cloud the moment they stepped back into a data zone. Managing the Node.js backend to handle these short-lived connections and large media uploads while maintaining high performance was a heavy lift.",
+        "I built the first version of the app in 2023 with only the past papers and math ladder. The hardest thing to implement was the PDF viewer because all PDF viewing libraries I tried to use were not pulling dependencies, meaning their support and serving had stopped. To get over that, I had to build the PDF viewer from scratch, including its zoom capabilities. Once that was complete, I knew 80% of what needed to be done was finished. I worked on the math ladder, which is a bunch of pictures that show the questions to be done with a text box below each where the student can enter his answer. Because of the many images, I struggled with loading all of them at once, then I decided to recycle the ImageView elements as the user scrolls down. One fancy thing I added was that each question had a different background color and the top bar adopted the background color as the user scrolls down. In the first 2 months, I registered a Play Store developer account and completed the many steps required to get your app to Play Store. Once there, the app survived for like 3 months before one day I woke up and the account was banned. This was because I made a silly mistake of using the developer email as the support email for the app, and that allowed Nigerian scammers to send me so many images to help them publish their scam apps for a very high fee. I hadn't replied, but it cost me my account regardless. After that, I didn't know what to do next because the main place for distributing the app was gone. I decided to then host it on APKPure and start a YouTube channel for promoting it, which worked well. It's the same setup I'm using now. I still have access to Firebase statistics though, that I wired on the app to be able to know how many users are using it.",
 
     performanceAndResults:
-        "We successfully demonstrated the first-ever social integration on the Ugandan Sovereign Cloud. The platform proved it could handle real-time AI translation and USSD account creation simultaneously. By using social camouflage—appearing as a simple social app—we actually built a robust research infrastructure that promotes national tech independence and aligns with the STI 4.0+ vision.",
+        "The app has grown mainly outside Play Store to an average monthly usage of about 600 users throughout the year. Though peak usage occurs during holidays when students are back home. The YouTube channel has grown to 179 subscribers. I managed to maintain the app outside Play Store. I have done 3 upgrades since I first started making the app. I fully changed the app from its package name to how files are served to prepare for the next time I will be putting it back on Play Store.",
 
     futurePlans:
-        "I am looking at scaling the Mesh Networking capabilities to support larger file transfers over longer distances without data. I also plan to refine the AI translation models to include even more dialects from across East Africa, eventually licensing the USSD/AI tech to other local startups.",
+        "I'm looking at publishing a gamified version of the app before May 2026. This will be the fourth major studying section in the app. In addition, I'll implement user login and collaboration in the math games they will be playing on the app. I'm planning to have the app back on Play Store before the year ends.",
 
     assets: {
-        github: "https://github.com/Emmyjay256/hajambo-backend",
+        github: "",
         demo: "",
 
         gallery: [
-            { src: "hajambo1.jpg", caption: "USSD screenshots" },
-            { src: "hajambo2.jpg", caption: "Application UI" },
-            { src: "hajambo3.jpg", caption: "PDF page 1" },
-            { src: "hajambo4.jpg", caption: "PDF page 2" },
-            { src: "hajambo5.jpg", caption: "PDF page 3" },
-            { src: "hajambo6.jpg", caption: "PDF page 4" },
-            { src: "hajambo7.jpg", caption: "PDF page 5" },
-            { src: "hajambo8.jpg", caption: "PDF page 6" },
-            { src: "hajambo9.jpg", caption: "PDF page 7" },
-            { src: "hajambo10.jpg", caption: "PDF page 8" },
-            { src: "hajambo11.jpg", caption: "PDF page 9" },
-            { src: "hajambo12.jpg", caption: "PDF page 10" },
-            { src: "hajambo13.jpg", caption: "PDF page 11" }
+            { src: "silentsuns1.jpg", caption: "FITS upload platgorm" },
+            { src: "silentsuns2.jpg", caption: "Planet orbit simulation" },
+            { src: "silentsuns3.jpg", caption: "Earth pin dropper" },
+            { src: "silentsuns4.jpg", caption: "Upload platform with results" }
         ]
     },
 

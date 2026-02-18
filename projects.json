@@ -1,27 +1,27 @@
 [
   {
-    "title": "Smart Energy Meter",
-    "description": "IoT-based energy monitoring system.",
-    "image": "meter.jpg",
+    "title": "Uganda’s offline, USSD and multilingual social media app",
+    "description": "Hajambo is a next-generation social platform built entirely for Uganda. It connects citizens online, offline, and in every local language (Luganda, Runyankole, Acholi, etc.) while ensuring national data sovereignty by running on local infrastructure.",
+    "image": "projects/hajambo/hajambo.png",
     "link": "projects/hajambo/project.html"
   },
   {
-    "title": "Solar Inverter Design",
-    "description": "Designed a low-cost solar inverter for rural electrification.",
-    "image": "inverter.jpg",
-    "link": "projects/inverter.html"
+    "title": "Exoplanet detection and visualisation platform",
+    "description": "This project was built for the NASA Space Apps Challenge to identify planetary transits and visualize them through a 3D interface. It bridges the gap between deep-learning predictions and interactive web storytelling.",
+    "image": "projects/silentsuns/silentsuns.png",
+    "link": "projects/silentsuns/project.html"
   },
   {
-    "title": "Analog Filter Design",
-    "description": "Implemented and tested analog filters for signal processing.",
-    "image": "filter.jpg",
-    "link": "projects/filter.html"
+    "title": "Spacecopy (Canada) - Lunar 3D Printer Research And Design",
+    "description": "SpaceCopy is a Canadian aerospace firm developing advanced 3D printing technology for the lunar surface. My work focuses on the technical feasibility, material dynamics, and electrical power systems required to sustain manufacturing in extreme lunar environments.",
+    "image": "projects/spacecopy/spacecopy.jpg",
+    "link": "projects/spacecopy/project.html"
   },
   {
-    "title": "Smart Lighting System",
-    "description": "Energy-efficient lighting with IoT control.",
+    "title": "Uganda Math Contest Prep App",
+    "description": "This app helps Ugandan students in High School get access to past papers of the Mathematics contest and prepares them with quizzes to qualify for international math olympiads.",
     "image": "lighting.jpg",
-    "link": "projects/lighting.html"
+    "link": "projects/mathapp/project.html"
   },
   {
     "title": "Industrial Motor Controller",
