@@ -309,7 +309,7 @@ img {
     bottom: 12px;
     background: rgba(0, 0, 0, 0.70);
     color: #fff;
-    padding: 8px 12px;
+    padding: 8px 25px;
     border-radius: 999px;
 
     /* ✅ bigger + responsive */
@@ -364,14 +364,16 @@ img {
 }
 
 .lightbox-content img {
-    width: 100%;
+    width: auto;
     height: min(62vh, 520px);
     object-fit: cover;
     background: #000;
+    margin: auto;
 }
 
 .lightbox-caption {
-    padding: 12px 16px;
+    padding: 12px;
+    padding-left: 30px;
 
     /* ✅ match section paragraph sizing */
     font-size: clamp(1.10rem, 0.38vw + 1.05rem, 1.30rem);

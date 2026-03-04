@@ -364,10 +364,11 @@ img {
 }
 
 .lightbox-content img {
-    width: 100%;
+    width: auto;
     height: min(62vh, 520px);
     object-fit: cover;
     background: #000;
+    margin: auto;
 }
 
 .lightbox-caption {

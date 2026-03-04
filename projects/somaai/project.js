@@ -5,58 +5,51 @@
    (EVERY PROJECT WILL ONLY SUPPLY THESE)
 ========================= */
 const PROJECT = {
-    title: "UGANDA MATH CONTEST PREP APP",
+    title: "SOMA AI: AN AI-POWERED SELF-STUDY APP",
 
     overview:
-        "This app helps Ugandan students in High School get access to past papers of the Mathematics contest and prepares them with quizzes to qualify for international math olympiads.",
+        "Soma AI is a self-study platform designed for Uganda’s new Competency-Based Curriculum (CBC). It provides students with syllabus-aligned notes, quizzes, and an AI tutor to ensure a 1:1 student-to-teacher ratio, even in schools with limited resources.",
 
-    status: "Version 3 (Nov 2025) Completed",
-    role: "Solo Developer",
+    status: "Prototype (Physics S1–S4) - Completed Sept 2025",
+    role: "App UI and Logic / Team Leader",
 
     coreTech: [
-        "Java",
-        "XML",
-        "Android Studio",
-        "Kotlin"
+        "Android (Java/Kotlin)", "JSON", "RAG (Retrieval-Augmented Generation)", "Prompt Engineering", "OpenAI API"
     ],
 
-    heroImage: "icon.png",
+    heroImage: "soma.png",
 
     problemChallenge:
-        "Many students around Uganda do not have access to training material for the national math contest. This has led to a disproportionate rate of passing for students away from big schools and central Uganda. I faced the same challenge the first time I did the math contest, though I managed to qualify for the International Mathematics Olympiad in Japan.",
+        "In Uganda, over 60% of learners struggle with sciences. Many students, like 'Aisha' from Lira, face a 1:80 teacher-to-student ratio and lack basic textbooks. The new CBC curriculum requires critical thinking, but the available resources are often outdated or irrelevant to the local context.",
 
     problemGoal:
-        'To make math contest training material accessible and offline.',
+        'To build an affordable, accessible AI study companion that makes learning interactive and follows the Ugandan syllabus exactly, starting with Physics as our foundation.',
 
     architectureAndDesign:
-        "The app is made of 3 main study sections. The first is the problems section, which has all past papers for both A and O level. The next is the math ladder section, which has questions of varying difficulty that you do personally to test your math and check your answers in real time. The last is the randQu section. This section has thousands of random questions whose difficulty varies heavily and tests students' Math rigor; answers are not provided. I processed papers from over a decade ago, split them into PDFs for each year with their answers, and shipped the past paper section with a PDF viewer custom-made with Java.",
+        "The app is built to be highly scalable. We used a standardized JSON structure to organize notes by class and topic. This means the same infrastructure used for Physics can be re-used for every other subject simply by populating new data, keeping infrastructure costs at zero as we expand. For the AI tutor, we implemented Retrieval-Augmented Generation (RAG). This ensures that the AI doesn't just give general answers but stays grounded in the Ugandan curriculum and NCDC/UNEB standards.",
 
     buildProcess:
-        "I built the first version of the app in 2023 with only the past papers and math ladder. The hardest thing to implement was the PDF viewer because all PDF viewing libraries I tried to use were not pulling dependencies, meaning their support and serving had stopped. To get over that, I had to build the PDF viewer from scratch, including its zoom capabilities. Once that was complete, I knew 80% of what needed to be done was finished. I worked on the math ladder, which is a bunch of pictures that show the questions to be done with a text box below each where the student can enter his answer. Because of the many images, I struggled with loading all of them at once, then I decided to recycle the ImageView elements as the user scrolls down. One fancy thing I added was that each question had a different background color and the top bar adopted the background color as the user scrolls down. In the first 2 months, I registered a Play Store developer account and completed the many steps required to get your app to Play Store. Once there, the app survived for like 3 months before one day I woke up and the account was banned. This was because I made a silly mistake of using the developer email as the support email for the app, and that allowed Nigerian scammers to send me so many images to help them publish their scam apps for a very high fee. I hadn't replied, but it cost me my account regardless. After that, I didn't know what to do next because the main place for distributing the app was gone. I decided to then host it on APKPure and start a YouTube channel for promoting it, which worked well. It's the same setup I'm using now. I still have access to Firebase statistics though, that I wired on the app to be able to know how many users are using it.",
+        "My main responsibility was the App UI and Logic. I had to design an interface that was simple enough for low-tech environments and basic Android phones while still feeling modern and interactive.A major technical focus was the Methodology of Grounding. Our team wrote and tested specific prompts for Physics to ensure the AI's explanations made sense in a local context. We chunked study materials and connected them to the AI system so it could 'read' the syllabus before answering the student. We tested it with peers at Kyambogo and used their feedback to make the explanations clearer and more helpful for exam preparation.",
 
     performanceAndResults:
-        "The app has grown mainly outside Play Store to an average monthly usage of about 600 users throughout the year. Though peak usage occurs during holidays when students are back home. The YouTube channel has grown to 179 subscribers. I managed to maintain the app outside Play Store. I have done 3 upgrades since I first started making the app. I fully changed the app from its package name to how files are served to prepare for the next time I will be putting it back on Play Store.",
+        "Soma AI successfully provides a 1:1 learning experience. Our early testing showed that the AI gives clear, syllabus-aligned answers that help students think critically rather than just memorizing facts.With the rise of affordable smartphones in Uganda (reaching 13.6 million users in 2024), Soma AI is positioned to support a huge portion of the 1.2 million secondary students who are currently underserved by traditional textbooks.",
 
     futurePlans:
-        "I'm looking at publishing a gamified version of the app before May 2026. This will be the fourth major studying section in the app. In addition, I'll implement user login and collaboration in the math games they will be playing on the app. I'm planning to have the app back on Play Store before the year ends.",
+        "This was a competition project whose architecture and development pipeline is transferable to other apps and projects.",
 
     assets: {
-        github: "",
+        github: "#",
         demo: "",
 
         gallery: [
-            { src: "mathapp1.png", caption: "Main page 1" },
-            { src: "mathapp2.png", caption: "Main page 2" },
-            { src: "mathapp3.png", caption: "Main page portrait" },
-            { src: "mathapp4.png", caption: "Info page" },
-            { src: "mathapp5.png", caption: "Competitions" },
-            { src: "mathapp6.png", caption: "Main page - dark theme" },
-            { src: "mathapp7.png", caption: "Ladder problems1" },
-            { src: "mathapp8.png", caption: "Ladder problems2" },
-            { src: "mathapp9.png", caption: "Ladder problems3" },
-            { src: "mathapp10.png", caption: "Ladder problems4" },
-            { src: "mathapp11.png", caption: "Info page - portrait" },
-            { src: "mathapp12.png", caption: "Past papers" }
+            { src: "soma1.jpg", caption: "pdf-page1" },
+            { src: "soma2.jpg", caption: "pdf-page2" },
+            { src: "soma3.jpg", caption: "pdf-page3" },
+            { src: "soma4.jpg", caption: "pdf-page4" },
+            { src: "soma5.jpg", caption: "pdf-page5" },
+            { src: "soma6.jpg", caption: "pdf-page6" },
+            { src: "soma7.jpg", caption: "pdf-page7" },
+            { src: "soma8.jpg", caption: "pdf-page8" }
         ]
     },
 
@@ -164,7 +157,6 @@ function renderGallery(images) {
         const cap = document.createElement("div");
         cap.className = "gallery-cap";
         cap.textContent = item.caption || `Image ${idx + 1}`;
-        
 
         box.appendChild(img);
         box.appendChild(cap);

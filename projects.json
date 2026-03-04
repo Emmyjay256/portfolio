@@ -20,19 +20,19 @@
   {
     "title": "Uganda Math Contest Prep App",
     "description": "This app helps Ugandan students in High School get access to past papers of the Mathematics contest and prepares them with quizzes to qualify for international math olympiads.",
-    "image": "lighting.jpg",
+    "image": "projects/mathapp/icon.png",
     "link": "projects/mathapp/project.html"
   },
   {
-    "title": "Industrial Motor Controller",
-    "description": "Robust motor controller for industrial automation.",
-    "image": "motor.jpg",
-    "link": "projects/motor.html"
+    "title": "Soma AI: An AI-powered self-study app",
+    "description": "Soma AI is a self-study platform designed for Uganda’s new Competency-Based Curriculum (CBC). It provides students with syllabus-aligned notes, quizzes, and an AI tutor to ensure a 1:1 student-to-teacher ratio, even in schools with limited resources.",
+    "image": "projects/somaai/soma.png",
+    "link": "projects/somaai/project.html"
   },
   {
-    "title": "Extra Project Example",
+    "title": "Soma AI: An AI-powered self-study app",
     "description": "This one won’t show in featured, but is in JSON.",
     "image": "extra.jpg",
-    "link": "projects/extra.html"
+    "link": "projects/extr"
   }
 ]
