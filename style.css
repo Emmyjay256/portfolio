@@ -160,14 +160,17 @@ body {
 }
 
 .project-desc {
-  margin: 12px 0 0;
+  margin: 8px 0 0;
+  /* 🔥 closer to title */
   font-family: 'Courier New', Courier, monospace;
   max-width: 62ch;
   padding: 0 16px;
 
-  font-size: clamp(1.25rem, 0.5vw + 1.15rem, 1.55rem);
-  line-height: 1.8;
-  color: #333;
+  font-size: clamp(16px, 0.6vw + 14px, 20px);
+  /* 🔽 smaller */
+  line-height: 1.7;
+  color: #444;
+  /* 🔥 softer for hierarchy */
 }
 
 .project-actions a {
@@ -192,15 +195,18 @@ body {
 }
 
 .project-name {
-  margin: 0 0 26px;
+  margin: 0 0 12px;
+  /* 🔥 tighter to desc */
   color: var(--muted, #070707);
   font-weight: 900;
   max-width: 70ch;
   font-family: 'Courier New', Courier, monospace;
   padding-left: 16px;
-  line-height: 1.9;
-  font-size: clamp(20px, 1.5vw, 28px);
-  line-height: 1.7;
+
+  font-size: clamp(24px, 2vw + 18px, 34px);
+  /* 🔥 bigger */
+  line-height: 1.4;
+  /* 🔥 tighter for titles */
 }
 
 .project-list {
@@ -332,6 +338,7 @@ body {
 
 /* Mobile */
 @media (max-width: 860px) {
+
   .project-card {
     grid-template-columns: 1fr;
     gap: 14px;
@@ -340,6 +347,17 @@ body {
 
   .project-media {
     min-height: 210px;
+  }
+
+  /* 🔥 FORCE consistent order on mobile */
+  .project-card--left .project-media,
+  .project-card--right .project-media {
+    order: 1;
+  }
+
+  .project-card--left .project-content,
+  .project-card--right .project-content {
+    order: 2;
   }
 }
 
