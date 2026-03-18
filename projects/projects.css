@@ -354,7 +354,7 @@ body {
 
 .philosophy-statement {
     font-family: 'Courier New', Courier, monospace;
-    font-size: clamp(1.25rem, 0.5vw + 1.15rem, 1.55rem);
+    font-size: clamp(20px, 1.2vw + 16px, 26px);
     line-height: 1.7;
     color: #444;
     max-width: 65ch;
