@@ -96,6 +96,20 @@ body {
     display: inline-block;
 }
 
+.project-link {
+    font-size: 1.8rem;
+    margin-bottom: 4px;
+    color: var(--text-black);
+    font-weight: 900;
+    border-bottom: 2px solid var(--accent-purple);
+    display: inline-block;
+    padding: 0;
+}
+
+.project-link:hover {
+    color: var(--accent-purple);
+}
+
 .project-description {
     /* Increased range for visible impact */
     font-size: clamp(1.25rem, 0.5vw + 1.15rem, 1.55rem);
