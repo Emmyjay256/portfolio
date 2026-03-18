@@ -95,38 +95,39 @@ body {
 
 
 /* Tablets can share laptop layout */
-@media (min-width: 768px) {
+@media (min-width: 870px) {
   .hero {
     flex-direction: row;
   }
 }
 
 /* Small phones (≈ Galaxy S24 and smaller) */
-@media (max-width: 480px) {
+
+@media (max-width: 860px) {
   .hero {
     flex-direction: column;
+    justify-content: flex-start;
     height: auto;
-    /* let content define height */
-    padding: 20px;
+    max-height: none;
+    padding: 90px 20px 32px;
+    gap: 24px;
   }
 
   .hero-image img {
-    width: 90vw;
-    /* nearly full width */
-    height: 90vw;
-    /* square: height = width */
+    width: min(82vw, 420px);
+    height: min(82vw, 420px);
     max-width: none;
     max-height: none;
-    margin-bottom: 20px;
+    margin-right: 0;
+    margin-bottom: 0;
   }
 
   .hero-text {
     margin-left: 0;
-    text-align: center;
     max-width: 90vw;
+    text-align: center;
   }
 }
-
 
 
 
