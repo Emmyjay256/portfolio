@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+}
+
+
 body {
   font-family: 'Courier New', Courier, monospace;
   margin: 0;
@@ -496,7 +501,7 @@ body {
   /* ✅ wrap to next line if needed */
   gap: 12px;
   /* spacing between tags */
-  padding: 25px;
+  padding: 5px;
 }
 
 .skills li {
@@ -514,6 +519,8 @@ body {
   font-weight: 600;
   color: #000;
   white-space: nowrap;
+  white-space: normal;
+  border-radius: 999px;
   /* keep each skill in one line */
 }
 
