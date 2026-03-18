@@ -473,6 +473,8 @@ body {
 .skills {
   padding: 40px;
   background: #f9f9f9;
+  width: 100%;
+  padding: 25px;
 }
 
 .skills h2 {
@@ -494,6 +496,7 @@ body {
   /* ✅ wrap to next line if needed */
   gap: 12px;
   /* spacing between tags */
+  padding: 25px;
 }
 
 .skills li {
@@ -505,7 +508,7 @@ body {
   /* ✅ fully semicircle ends */
   padding: 12px 24px;
   /* roomy inside */
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-family: 'Courier New', Courier, monospace;
   /* bigger font */
   font-weight: 600;
