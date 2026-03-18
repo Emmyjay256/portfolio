@@ -151,7 +151,7 @@ body {
 }
 
 .projects-title {
-  margin: 0 0 10px;
+  margin-top: 50px;
   font-size: clamp(30px, 3.2vw, 32px);
   font-weight: 900;
   font-family: 'Courier New', Courier, monospace;
@@ -251,7 +251,7 @@ body {
   transform: translateX(-50%);
   width: 100vw;
   top: 0;
-  height: 1px;
+  height: 4px;
   background: color-mix(in srgb, var(--text, #000) 16%, transparent);
   z-index: 1;
 }
