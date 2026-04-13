@@ -745,3 +745,94 @@ body {
     transform: scale(0.3);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Floating CV button */
+.cv-floating-btn {
+  position: fixed;
+  bottom: 80px;
+  /* Positioned above the contact hub */
+  right: 80px;
+  z-index: 1000;
+}
+
+.cv-btn {
+  display: flex;
+  align-items: center;
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+
+  /* Thin, sharp magenta border */
+  border: 1px solid #FF00FF;
+
+  /* Initial vibrant glow */
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+
+  animation: magenta-pulse 2.2s infinite ease-in-out;
+}
+
+.cv-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-5px);
+  /* Intense "Neon-City" glow */
+  border-color: #ff77ff;
+  box-shadow: 0 0 20px #FF00FF, 0 0 40px rgba(255, 0, 255, 0.6);
+}
+
+/* The High-Contrast Magenta Pulse */
+@keyframes magenta-pulse {
+  0% {
+    box-shadow: 0 0 8px rgba(255, 0, 255, 0.7), 0 0 0px rgba(255, 0, 255, 0);
+  }
+
+  50% {
+    /* Peak visibility - looks like a glowing neon tube */
+    box-shadow: 0 0 20px #FF00FF, 0 0 35px rgba(255, 0, 255, 0.5);
+  }
+
+  100% {
+    box-shadow: 0 0 8px rgba(255, 0, 255, 0.7), 0 0 0px rgba(255, 0, 255, 0);
+  }
+}
+
+.cv-icon {
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+/* Mobile Adjustment */
+@media (max-width: 768px) {
+  .cv-text {
+    display: none;
+    /* Shows only the icon on small screens to save space */
+  }
+
+  .cv-btn {
+    padding: 15px;
+    border-radius: 50%;
+  }
+
+  .cv-icon {
+    margin-right: 0;
+  }
+}
