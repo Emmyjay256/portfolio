@@ -823,7 +823,7 @@ body {
 /* Mobile Adjustment */
 @media (max-width: 768px) {
   .cv-text {
-    display: none;
+
     /* Shows only the icon on small screens to save space */
   }
 
