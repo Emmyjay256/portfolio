@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --accent-purple: #c778dd;
+}
+
 
 body {
   font-family: 'Courier New', Courier, monospace;
@@ -834,5 +838,141 @@ body {
 
   .cv-icon {
     margin-right: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Schools */
+.project-section {
+  /* Expands to 1600px on 4k, remains 1100px on standard desktop */
+  max-width: min(1600px, 92vw);
+  margin: 0 auto;
+  margin-top: 300px;
+}
+
+.project-block {
+  position: relative;
+  border: 2px solid var(--accent-purple);
+  margin-bottom: clamp(80px, 8vh, 120px);
+  /* Internal spacing scales up for 4k visibility */
+  padding: clamp(40px, 5vw, 100px);
+  display: flex;
+  gap: clamp(40px, 6vw, 120px);
+  align-items: center;
+  background: white;
+}
+
+/* The "Floating Box" on the top border */
+.project-tag {
+  position: absolute;
+  top: -22px;
+  /* Adjusted slightly higher to account for larger font */
+  left: 50px;
+  background-color: white;
+  border: 2px solid var(--accent-purple);
+  padding: 6px 25px;
+  font-weight: bold;
+  /* Increased range for visible impact */
+  font-size: clamp(1.25rem, 0.5vw + 1.15rem, 1.55rem);
+  text-transform: lowercase;
+  color: var(--text-black);
+  z-index: 10;
+}
+
+/* Image styling - Borderless */
+.project-image {
+  flex: 1;
+  /* Allows image to grow from 450px up to 800px on 4k */
+  max-width: clamp(450px, 40vw, 800px);
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  
+}
+
+.project-image img:hover {
+  filter: grayscale(0%);
+}
+
+/* Text styling */
+.project-info {
+  flex: 1;
+}
+
+.project-title {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: var(--text-black);
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--accent-purple);
+  display: inline-block;
+}
+
+.project-description {
+  /* Increased range for visible impact */
+  font-size: clamp(1.25rem, 0.5vw + 1.15rem, 1.55rem);
+  line-height: 1.8;
+  color: #333;
+  /* Darker for better legibility at larger sizes */
+}
+
+.project-link {
+  font-size: 1.8rem;
+  margin-bottom: 4px;
+  color: var(--text-black);
+  font-weight: 900;
+  border-bottom: 2px solid var(--accent-purple);
+  display: inline-block;
+  padding: 0;
+}
+
+.project-link:hover {
+  color: var(--accent-purple);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 850px) {
+  .project-block {
+    flex-direction: column;
+    padding: 50px 20px 20px 20px;
+    /* Space for the tag */
+    align-items: flex-start;
+  }
+
+  .project-tag {
+    left: 20px;
+  }
+
+  .project-image {
+    max-width: 100%;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
   }
 }
